@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEditor;
+using UnityEngine;
 
 namespace EditorTools.AssetBundle{
     public class AssetPathHelper
@@ -10,6 +11,11 @@ namespace EditorTools.AssetBundle{
         public static BuildTarget buildTarget = EditorUserBuildSettings.activeBuildTarget;
         public static string patchVersion = null;
 
+        private const string TOKEN_ASSETS = "Assets";
+        /// <summary>
+        /// folder模式打包中，正则表达式中必须定义最终生成AB文件路径名的子模式
+        /// </summary>
+        public const string REGEX_TOKEN_PATH = "path";
 
         public static Dictionary<BuildTarget, string> GetBuildTargetIdentifierDict()
         {
@@ -22,5 +28,16 @@ namespace EditorTools.AssetBundle{
             result.Add(BuildTarget.iOS, "ios");
             return result;
         }
+
+        public static string ToFileSystemPath(string assetPath)
+        {
+            return Application.dataPath.Replace(TOKEN_ASSETS, "") + assetPath;
+        }
+
+        public static BuildTarget GetBuildTarget()
+        {
+            return buildTarget;
+        }
+
     }
 }
