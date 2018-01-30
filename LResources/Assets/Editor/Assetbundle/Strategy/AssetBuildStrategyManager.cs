@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EditorTools.Assetbundle;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -68,6 +69,25 @@ namespace EditorTools.AssetBundle
         private static Dictionary<BuildTarget, string> GetBuildTargetIndentifierDict()
         {
             return AssetPathHelper.GetBuildTargetIdentifierDict();
+        }
+
+        public static AssetBuildStrategy GetAssetBuildStrategy(string entryPath, bool showLog = true)
+        {
+            if(_assetStrategyDict.ContainsKey(entryPath))
+            {
+                return _assetStrategyDict[entryPath];
+            }
+            foreach(AssetBuildStrategy strategy in _defineStrategyDict.Values)
+            {
+                if(strategy.entryPattern.IsMatch(entryPath))
+                {
+                    if (showLog) Logger.GetLogger(AssetBundleExporter.LOGGER_NAME).Log(string.Format("<color=#0000ff>Path: {0} Matches Strategy: {1}</color>", entryPath, strategy.name));
+                    _assetStrategyDict.Add(entryPath, strategy);
+                    return strategy;
+                }
+            }
+            if (showLog) Logger.GetLogger(AssetBundleExporter.LOGGER_NAME).Log(string.Format("<color=#0000ff>Path: {0} 未找到匹配的打包策略！</color>", entryPath));
+            return null;
         }
     }
 }
