@@ -7,6 +7,7 @@ using Object = UnityEngine.Object;
 using Logger = EditorTools.Assetbundle.Logger;
 using System.Collections.Generic;
 using System.IO;
+using EditorTools.UI;
 
 namespace EditorTools.AssetBundle
 {
@@ -50,9 +51,22 @@ namespace EditorTools.AssetBundle
                 {
                     _processedAssetPathSet.Add(path);
                     assetPath = path;
-                    //if(path.StartsWith(UIPr))
+                    if(path.StartsWith(UIPrefabProcessor.UI_PREFAB_ROOT) == true)
+                    {
+                        assetPath = PreprocessUIPrefab(path);
+                    }
                 }
             }
+        }
+
+        /// <summary>
+        /// 预处理UIPrefab，实际打包资源是使用图集资源的UIPrefa：b
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        private static string PreprocessUIPrefab(string path)
+        {
+            return UIPrefabProcessor.Process(path);
         }
 
         private static bool IsBuildStrategyExists(string entryPath)
