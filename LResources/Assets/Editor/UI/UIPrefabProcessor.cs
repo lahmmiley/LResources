@@ -1,5 +1,7 @@
-﻿using System;
+﻿using EditorTools.AssetBundle;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using UnityEditor;
@@ -13,6 +15,16 @@ namespace EditorTools.UI
         /// UIPrefab根路径
         /// </summary>
         public static string UI_PREFAB_ROOT = "Assets/Things/Prefabs/UI/";
+
+        /// <summary>
+        /// UIPrefab副本根路径
+        /// </summary>
+        public static string UI_PREFAB_ROOT_SHADOW = "Assets/Things/Prefabs/UI_{0}";
+
+        /// <summary>
+        /// UIPrefab中单张图片列表目录根路径
+        /// </summary>
+        public static string UI_TEXTURE_ROOT = "Assets/Things/Texture/UI/";
 
         public static string Process(string prefabPath)
         {
@@ -57,10 +69,29 @@ namespace EditorTools.UI
             return "Assets" + systemPath.Substring(Application.dataPath.Length);
         }
 
+        public static string GetShadowTextureFolderPath(string folderPath)
+        {
+            return folderPath.Replace(UI_TEXTURE_ROOT, GetShadowTextureFolderRoot());
+        }
+
+        public static string GetShadowTextureFolderRoot()
+        {
+            return string.Format(UI_PREFAB_ROOT_SHADOW, AssetPathHelper.GetBuildTarget(AssetPathHelper.GetBuildTarget()));
+        }
+
         public static void ThrowException(string msg)
         {
             EditorUtility.DisplayDialog("错误", msg, "马上调整Go~");
             throw new Exception(msg);
+        }
+
+        public static void CreateInexistentFolder(string path)
+        {
+            string folderPath = Path.GetDirectoryName(ToFileSystemPath(path));
+            if(!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
         }
     }
 }

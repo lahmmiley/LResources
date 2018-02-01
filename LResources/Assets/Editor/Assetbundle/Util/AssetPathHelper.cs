@@ -39,5 +39,25 @@ namespace EditorTools.AssetBundle{
             return buildTarget;
         }
 
+        public static string GetBuildTarget(BuildTarget pbuildTarget)
+        {
+            switch( pbuildTarget)
+            {
+                case BuildTarget.Android:
+                    return "android";
+                case BuildTarget.StandaloneWindows:
+                    return "pc";
+                case BuildTarget.StandaloneWindows64:
+                    return "pc";
+                case BuildTarget.StandaloneOSXIntel:
+                    return "pc";
+                case BuildTarget.StandaloneOSXIntel64:
+                    return "pc";
+                case BuildTarget.iOS:
+                    return "ios";
+                default:
+                    throw new Exception("无法识别平台" + pbuildTarget.ToString());
+            }
+        }
     }
 }
