@@ -32,6 +32,23 @@ namespace EditorTools.UI
             string[] textureFolderPaths = GetPrefabDependentTextureFolderPaths(prefabPath);
             //将每一个图片目录做成一个图集
             string[] atlasPaths = AtlasGenerator.Generate(textureFolderPaths);
+            //将Prefab复制出来一个副本
+            string copyPath = CopyPrefab(prefabPath);
+            //将副本Prefab中Image组件上的资源依赖重定向到图集的Sprite
+            ReplaceImageSprite(copyPath, atlasPaths);
+        }
+
+        private static string CopyPrefab(string source)
+        {
+            string target = GetCopyPrefabPath(source);
+            CreateInexistentFolder(target);
+            AssetDatabase.CopyAsset(source, target);
+            return target;
+        }
+
+        private static string GetCopyPrefabPath(string sourcePath)
+        {
+            return sourcePath.Replace(UI_PREFAB_ROOT, GetShadowTextureFolderRoot());
         }
 
         private static string[] GetPrefabDependentTextureFolderPaths(string path)

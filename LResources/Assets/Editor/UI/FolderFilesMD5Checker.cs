@@ -167,7 +167,7 @@ namespace EditorTools.UI
         /// <returns></returns>
         private static string GetMd5RecordPath(string folderPath)
         {
-            return UIPrefabProcessor.GetShadowTextureFolderPath(folderPath) + "/md5.json"
+            return UIPrefabProcessor.GetShadowTextureFolderPath(folderPath) + "/md5.json";
         }
     }
 
