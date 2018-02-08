@@ -55,12 +55,25 @@ namespace EditorTools.AssetBundle
                     {
                         assetPath = PreprocessUIPrefab(path);
                     }
+                    List<List<string>> pathListList = ProcessAsset(assetPath);
+                    result.Add(path, pathListList);
                 }
             }
+            return result;
+        }
+
+        private static List<List<string>> ProcessAsset(string path)
+        {
+            AssetBuildStrategy strategy = AssetBuildStrategyManager.GetAssetBuildStrategy(path);
+            if(strategy != null)
+            {
+                return AssetProcessor.ProcessAsset(path, strategy);
+            }
+            return new List<List<string>>();
         }
 
         /// <summary>
-        /// 预处理UIPrefab，实际打包资源是使用图集资源的UIPrefa：b
+        /// 预处理UIPrefab，实际打包资源是使用图集资源的UIPrefab
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>

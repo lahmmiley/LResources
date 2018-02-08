@@ -6,7 +6,10 @@ using System.Linq;
 using System.Text;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
+//基本一致
 namespace EditorTools.UI
 {
     public class UIPrefabProcessor
@@ -36,6 +39,13 @@ namespace EditorTools.UI
             string copyPath = CopyPrefab(prefabPath);
             //将副本Prefab中Image组件上的资源依赖重定向到图集的Sprite
             ReplaceImageSprite(copyPath, atlasPaths);
+            return copyPath;
+        }
+
+        public static string GetFolderPath(string path)
+        {
+            int index = path.LastIndexOf("/");
+            return path.Substring(0, index);
         }
 
         private static string CopyPrefab(string source)
@@ -46,9 +56,95 @@ namespace EditorTools.UI
             return target;
         }
 
+        private static void ReplaceImageSprite(string prefabPath, string[] atlasPaths)
+        {
+            GameObject prefab = AssetDatabase.LoadAssetAtPath(prefabPath, typeof(GameObject)) as GameObject;
+            Dictionary<string, List<Sprite>> spriteListDict = GetSpriteListDict(atlasPaths);
+            Dictionary<string, Material> materialDict = GetMaterialDict(atlasPaths);
+            GameObject go = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+            Image[] images = go.GetComponentsInChildren<Image>(true);
+            foreach(Image image in images)
+            {
+                Sprite sprite = image.sprite;
+                if(sprite != null)
+                {
+                    ChangeImageSpriteMaterial(image, spriteListDict, materialDict);
+                }
+            }
+            PrefabUtility.CreatePrefab(prefabPath, go, ReplacePrefabOptions.ConnectToPrefab);
+            Object.DestroyImmediate(go, true);
+        }
+
+        private static Dictionary<string, List<Sprite>> GetSpriteListDict(string[] atlasPaths)
+        {
+            Dictionary<string, List<Sprite>> result = new Dictionary<string, List<Sprite>>();
+            for (int i = 0; i < atlasPaths.Length; i++)
+            {
+                Object[] objs = AssetDatabase.LoadAllAssetsAtPath(atlasPaths[i]);
+                List<Sprite> spriteList = new List<Sprite>();
+                foreach (Object o in objs)
+                {
+                    if (o is Sprite)
+                    {
+                        spriteList.Add(o as Sprite);
+                    }
+                }
+                result.Add(atlasPaths[i], spriteList);
+            }
+            return result;
+        }
+
+        private static Dictionary<string, Material> GetMaterialDict(string[] atlasPaths)
+        {
+            Dictionary<string, Material> result = new Dictionary<string, Material>();
+            foreach (string s in atlasPaths)
+            {
+                result.Add(s, AssetDatabase.LoadAssetAtPath(AtlasGenerator.GetMaterialPath(s), typeof(Material)) as Material);
+            }
+            return result;
+        }
+
+        private static void ChangeImageSpriteMaterial(Image image, Dictionary<string, List<Sprite>> spriteListDict, Dictionary<string, Material> materialDict)
+        {
+            Sprite sprite = image.sprite;
+            string path = AssetDatabase.GetAssetPath(sprite);
+            string folderPath = GetFolderPath(path);
+            string tag = (AssetImporter.GetAtPath(path) as TextureImporter).spritePackingTag;
+            string atlasPath = AtlasGenerator.GetAtlasPath(folderPath, tag);
+            List<Sprite> spriteList = spriteListDict[atlasPath];
+            foreach(Sprite s in spriteList)
+            {
+                if(s.name == sprite.name)
+                {
+                    image.sprite = s;
+                    image.material = materialDict[atlasPath];
+                    break;
+                }
+            }
+        }
+
+        public static void CreateInexistentFolder(string path)
+        {
+            string folderPath = Path.GetDirectoryName(ToFileSystemPath(path));
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+        }
+
         private static string GetCopyPrefabPath(string sourcePath)
         {
             return sourcePath.Replace(UI_PREFAB_ROOT, GetShadowTextureFolderRoot());
+        }
+
+        public static string GetShadowTextureFolderPath(string folderPath)
+        {
+            return folderPath.Replace(UI_TEXTURE_ROOT, GetShadowTextureFolderRoot());
+        }
+
+        public static string GetShadowTextureFolderRoot()
+        {
+            return string.Format(UI_PREFAB_ROOT_SHADOW, AssetPathHelper.GetBuildTarget(AssetPathHelper.GetBuildTarget()));
         }
 
         private static string[] GetPrefabDependentTextureFolderPaths(string path)
@@ -69,12 +165,6 @@ namespace EditorTools.UI
             return result.ToArray<string>();
         }
 
-        public static string GetFolderPath(string path)
-        {
-            int index = path.LastIndexOf("/");
-            return path.Substring(0, index);
-        }
-
         public static string ToFileSystemPath(string assetPath)
         {
             return Application.dataPath.Replace("Assets", "") + assetPath;
@@ -86,29 +176,10 @@ namespace EditorTools.UI
             return "Assets" + systemPath.Substring(Application.dataPath.Length);
         }
 
-        public static string GetShadowTextureFolderPath(string folderPath)
-        {
-            return folderPath.Replace(UI_TEXTURE_ROOT, GetShadowTextureFolderRoot());
-        }
-
-        public static string GetShadowTextureFolderRoot()
-        {
-            return string.Format(UI_PREFAB_ROOT_SHADOW, AssetPathHelper.GetBuildTarget(AssetPathHelper.GetBuildTarget()));
-        }
-
         public static void ThrowException(string msg)
         {
             EditorUtility.DisplayDialog("错误", msg, "马上调整Go~");
             throw new Exception(msg);
-        }
-
-        public static void CreateInexistentFolder(string path)
-        {
-            string folderPath = Path.GetDirectoryName(ToFileSystemPath(path));
-            if(!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
         }
     }
 }

@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace EditorTools.AssetBundle{
     public class AssetPathHelper
     {
+        public const string PATH_RESOURCES = "Assets/Things/";
+        public const string PATH_RESOURCES_TEMP = "Assets/Things_temp/";
+        public const string POSTFIX_SINGLE = ".single";
+        public const string POSTFIX_FOLDER = ".folder";
+        public const string POSTFIX_SELECTION = ".selection";
+        public const string FBX = ".fbx";
+        public const string TTF = ".ttf";
+
         public static BuildTarget buildTarget = EditorUserBuildSettings.activeBuildTarget;
         public static string patchVersion = null;
 
@@ -58,6 +68,102 @@ namespace EditorTools.AssetBundle{
                 default:
                     throw new Exception("无法识别平台" + pbuildTarget.ToString());
             }
+        }
+
+        /// <summary>
+        /// entryPath:打包入口资源路径
+        /// assetPath:打包入口资源所依赖的资源路径
+        /// </summary>
+        /// <param name="entryPath"></param>
+        /// <param name="materialPath"></param>
+        /// <param name="material"></param>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        public static string GetObjectKey(string entryPath, string assetPath, Object obj, StrategyNode node)
+        {
+            string token = string.Empty;
+            if(string.IsNullOrEmpty(assetPath))
+            {
+                throw new Exception("Asset physicalPath should not be empty!");
+            }
+
+            if(node.mode == PackageMode.SINGLE)
+            {
+                token = GetSingleModeBundlePath(assetPath);
+                //字体ttf和模型文件是特殊的类型，一个Asset中包含多个Object
+                //AssetDatabase.LoadAllAssetsAtPath(assetPath) 返回长度大于一
+                if(token.Contains(FBX) || token.Contains(TTF))
+                {
+                    token = token + obj.GetType().Name + obj.name;
+                }
+            }
+            else if(node.mode == PackageMode.FOLDER)
+            {
+                token = GetFolderModeBundlePath(assetPath, node.pattern) + obj.GetType().Name + obj.name;
+            }
+            else if(node.mode == PackageMode.SELECTION)
+            {
+                token = GetSelectionModeBundlePath(entryPath, assetPath, node.pattern) + obj.GetType().Name + obj.name;
+            }
+            return token;
+        }
+
+        private static string GetSelectionModeBundlePath(string entryPath, string assetPath, Regex pattern)
+        {
+            string result = GetSelectionModeStartPath(entryPath);
+            string postfix = GetPostfix(assetPath, pattern);
+            return ReplaceSlash(EliminaterStartToken(result + postfix + POSTFIX_SELECTION)).ToLower();
+        }
+
+        /// <summary>
+        /// selection模式下资源包路径
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
+        public static string GetSelectionModeStartPath(string path)
+        {
+            return path.Substring(0, path.LastIndexOf("."));
+        }
+
+        private static string GetFolderModeBundlePath(string assetPath, Regex pattern)
+        {
+            string result = GetFolderModeBundlePath(assetPath, pattern);
+            string postfix = GetPostfix(assetPath, pattern);
+            return ReplaceSlash(EliminaterStartToken(result + postfix + POSTFIX_FOLDER)).ToLower();
+        }
+
+        private static string GetPostfix(string path, Regex pattern)
+        {
+            GroupCollection gc = pattern.Match(path).Groups;
+            string result = gc[REGEX_TOKEN_PATH].Value;
+            if(string.IsNullOrEmpty(result))
+            {
+                return string.Empty;
+            }
+            return "." + result.ToLower();
+        }
+
+        public static string GetSingleModeBundlePath(string path)
+        {
+            return (ReplaceSlash(EliminaterStartToken(path) + POSTFIX_SINGLE)).ToLower().Replace(" ", "");
+        }
+
+        public static string ReplaceSlash(string path)
+        {
+            return path.Replace("/", "$");
+        }
+
+        public static string EliminaterStartToken(string path)
+        {
+            if(path.StartsWith(PATH_RESOURCES))
+            {
+                return path.Substring(PATH_RESOURCES.Length);
+            }
+            if(path.StartsWith(PATH_RESOURCES_TEMP))
+            {
+                return path.Substring(PATH_RESOURCES_TEMP.Length);
+            }
+            return path;
         }
     }
 }

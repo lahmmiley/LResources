@@ -7,6 +7,7 @@ using System.Text;
 using UnityEditor;
 using UnityEngine;
 
+//完全一致
 namespace EditorTools.UI
 {
     public class AtlasGenerator
@@ -39,48 +40,74 @@ namespace EditorTools.UI
             return result;
         }
 
-        private static void CreateAtlas(string atlasPath, TextureData[] textureDatas)
+        public static string GetAtlasPath(string folderPath, string tag)
         {
-            Texture2D atlas = new Texture2D(ATLAS_MAX_SIZE, ATLAS_MAX_SIZE);
-            Rect[] rects = atlas.PackTextures(GetPackTextures(textureDatas), 0, ATLAS_MAX_SIZE, false);
-            AtlasWriter.Write(atlas, atlasPath);
-            int atlasWidth = atlas.width;
-            int atlasHeight = atlas.height;
-            string alphaAtlasPath = atlasPath.Replace(".png", "_alpha.png");
-            AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceUpdate);
-            //安卓平台图集分离通道
-            if(AssetPathHelper.GetBuildTarget() == BuildTarget.Android && !atlasPath.Contains("UI_Base"))
+            string atlasPath = UIPrefabProcessor.GetShadowTextureFolderPath(folderPath) + "/UI_" + tag + ".png";
+            UIPrefabProcessor.CreateInexistentFolder(atlasPath);
+            return atlasPath;
+        }
+
+        public static string GetMaterialPath(string atlasPath)
+        {
+            return atlasPath.Replace(".png", ".mat");
+        }
+
+        private static string[] GetAssetPaths(string folderPath)
+        {
+            string systemPath = UIPrefabProcessor.ToFileSystemPath(folderPath);
+            string[] filePaths = Directory.GetFiles(systemPath, "*.png");
+            string[] result = new string[filePaths.Length];
+            for (int i = 0; i < filePaths.Length; i++)
             {
-                try
+                result[i] = UIPrefabProcessor.ToAssetPath(filePaths[i]);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取目录下Texture的Packingtag
+        /// 同时验证同一目录下Texture的PackingTag是否相同，不同则报错，提示修改
+        /// </summary>
+        /// <param name="assetPaths"></param>
+        /// <returns></returns>
+        private static string GetFolderTexturePackingTag(string[] assetPaths)
+        {
+            string tag = null;
+            foreach (string s in assetPaths)
+            {
+                string nextTag = GetTexturePackingTag(s);
+                if (tag != null && tag != nextTag)
                 {
-                    ImageChannelSpliterWrapper.Execute(atlasPath);
-                    AssetDatabase.ImportAsset(alphaAtlasPath, ImportAssetOptions.ForceUpdate);
-                    TextureImporterUtil.CreateAlphaChannelImporter(alphaAtlasPath);
-                    AssetDatabase.ImportAsset(alphaAtlasPath, ImportAssetOptions.ForceUpdate);
+                    UIPrefabProcessor.ThrowException("同一目录下存在不同的SpritePackingTag，路径： " + s + " tag: " + nextTag);
                 }
-                catch (Exception e)
+                else
                 {
-                    Debug.LogError("通道分离过程中发生错误： " + e.Message);
-                    Debug.LogException(e);
+                    tag = nextTag;
                 }
             }
-            TextureImporterFormat textureFormat = TextureImporterUtil.GetTextureFormat();
-            if(atlasPath.Contains("UI_Base"))
+            return tag;
+        }
+
+        private static string GetTexturePackingTag(string path)
+        {
+            TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
+            return importer.spritePackingTag;
+        }
+
+        private static void ImportTextureReadable(string[] assetPaths)
+        {
+            foreach (string s in assetPaths)
             {
-                textureFormat = TextureImporterFormat.ARGB32;
+                TextureImporter importer = AssetImporter.GetAtPath(s) as TextureImporter;
+                importer.isReadable = true;
+                AssetDatabase.ImportAsset(s, ImportAssetOptions.ForceUpdate);
             }
-            AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceUpdate);
-            TextureImporterUtil.CreateMultipleSpriteImporter(atlas, rects, GetPackTexturesNames(textureDatas), GetSpriteBorders(textureDatas),
-                                                                atlasWidth, atlasHeight, textureFormat, ATLAS_MAX_SIZE);
-            AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceUpdate);
-            MaterialCreator.Create(atlasPath, alphaAtlasPath);
-            return atlas;
         }
 
         private static TextureData[] ReadTexture(string[] assetPaths)
         {
             TextureData[] textureDatas = new TextureData[assetPaths.Length];
-            for(int i = 0; i < assetPaths.Length; i++)
+            for (int i = 0; i < assetPaths.Length; i++)
             {
                 Sprite sprite = AssetDatabase.LoadAssetAtPath(assetPaths[i], typeof(Sprite)) as Sprite;
                 TextureData data = new TextureData();
@@ -111,69 +138,48 @@ namespace EditorTools.UI
             return textureDatas;
         }
 
-        private static void ImportTextureReadable(string[] assetPaths)
+        private static Texture2D CreateAtlas(string atlasPath, TextureData[] textureDatas)
         {
-            foreach(string s in assetPaths)
+            Texture2D atlas = new Texture2D(ATLAS_MAX_SIZE, ATLAS_MAX_SIZE);
+            Rect[] rects = atlas.PackTextures(GetPackTextures(textureDatas), 0, ATLAS_MAX_SIZE, false);
+            AtlasWriter.Write(atlas, atlasPath);
+            int atlasWidth = atlas.width;
+            int atlasHeight = atlas.height;
+            string alphaAtlasPath = atlasPath.Replace(".png", "_alpha.png");
+            AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceUpdate);
+            //安卓平台图集分离通道
+            if(AssetPathHelper.GetBuildTarget() == BuildTarget.Android && !atlasPath.Contains("UI_Base"))
             {
-                TextureImporter importer = AssetImporter.GetAtPath(s) as TextureImporter;
-                importer.isReadable = true;
-                AssetDatabase.ImportAsset(s, ImportAssetOptions.ForceUpdate);
-            }
-        }
-
-        private static string GetAtlasPath(string folderPath, string tag)
-        {
-            string atlasPath = UIPrefabProcessor.GetShadowTextureFolderPath(folderPath) + "/UI_" + tag + ".png";
-            UIPrefabProcessor.CreateInexistentFolder(atlasPath);
-            return atlasPath;
-        }
-
-        /// <summary>
-        /// 获取目录下Texture的Packingtag
-        /// 同时验证同一目录下Texture的PackingTag是否相同，不同则报错，提示修改
-        /// </summary>
-        /// <param name="assetPaths"></param>
-        /// <returns></returns>
-        private static string GetFolderTexturePackingTag(string[] assetPaths)
-        {
-            string tag = null;
-            foreach(string s in assetPaths)
-            {
-                string nextTag = GetTexturePackingTag(s);
-                if(tag != null && tag != nextTag)
+                try
                 {
-                    UIPrefabProcessor.ThrowException("同一目录下存在不同的SpritePackingTag，路径： " + s + " tag: "  + nextTag);
+                    ImageChannelSpliterWrapper.Execute(atlasPath);
+                    AssetDatabase.ImportAsset(alphaAtlasPath, ImportAssetOptions.ForceUpdate);
+                    TextureImporterUtil.CreateAlphaChannelImporter(alphaAtlasPath);
+                    AssetDatabase.ImportAsset(alphaAtlasPath, ImportAssetOptions.ForceUpdate);
                 }
-                else
+                catch (Exception e)
                 {
-                    tag = nextTag;
+                    Debug.LogError("通道分离过程中发生错误： " + e.Message);
+                    Debug.LogException(e);
                 }
             }
-            return tag;
-        }
-
-        private static string GetTexturePackingTag(string path)
-        {
-            TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
-            return importer.spritePackingTag;
-        }
-
-        private static string[] GetAssetPaths(string folderPath)
-        {
-            string systemPath = UIPrefabProcessor.ToFileSystemPath(folderPath);
-            string[] filePaths = Directory.GetFiles(systemPath, "*.png");
-            string[] result = new string[filePaths.Length];
-            for(int i = 0; i < filePaths.Length; i++)
+            TextureImporterFormat textureFormat = TextureImporterUtil.GetTextureFormat();
+            if(atlasPath.Contains("UI_Base"))
             {
-                result[i] = UIPrefabProcessor.ToAssetPath(filePaths[i]);
+                textureFormat = TextureImporterFormat.ARGB32;
             }
-            return result;
+            AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceUpdate);
+            TextureImporterUtil.CreateMultipleSpriteImporter(atlasPath, rects, GetPackTexturesNames(textureDatas), GetSpriteBorders(textureDatas),
+                                                                atlasWidth, atlasHeight, textureFormat, ATLAS_MAX_SIZE);
+            AssetDatabase.ImportAsset(atlasPath, ImportAssetOptions.ForceUpdate);
+            MaterialCreator.Create(atlasPath, alphaAtlasPath);
+            return atlas;
         }
 
         private static Texture2D[] GetPackTextures(TextureData[] textureDatas)
         {
             Texture2D[] result = new Texture2D[textureDatas.Length];
-            for(int i = 0; i < textureDatas.Length; i++)
+            for (int i = 0; i < textureDatas.Length; i++)
             {
                 result[i] = textureDatas[i].texture;
             }
@@ -183,7 +189,7 @@ namespace EditorTools.UI
         private static string[] GetPackTexturesNames(TextureData[] textureDatas)
         {
             string[] result = new string[textureDatas.Length];
-            for(int i = 0; i < textureDatas.Length; i++)
+            for (int i = 0; i < textureDatas.Length; i++)
             {
                 result[i] = textureDatas[i].name;
             }
@@ -193,7 +199,7 @@ namespace EditorTools.UI
         private static Vector4[] GetSpriteBorders(TextureData[] textureDatas)
         {
             Vector4[] result = new Vector4[textureDatas.Length];
-            for(int i = 0; i < textureDatas.Length; i++)
+            for (int i = 0; i < textureDatas.Length; i++)
             {
                 TextureData textureData = textureDatas[i];
                 result[i] = new Vector4(textureData.left, textureData.bottom, textureData.right, textureData.top);
