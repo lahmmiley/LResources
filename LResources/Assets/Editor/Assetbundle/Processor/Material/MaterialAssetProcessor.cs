@@ -20,5 +20,16 @@ namespace EditorTools.AssetBundle
             }
             return path;
         }
+
+        public static string GetShaderPath(Shader shader)
+        {
+            string path = AssetDatabase.GetAssetPath(shader);
+            if(Path.GetExtension(path) == string.Empty)
+            {
+                string msg = "使用了不带.shader后缀的内置Shader，请使用项目创建的Shader：" + shader.name;
+                AssetBundleExporter.ThrowException(msg);
+            }
+            return path;
+        }
     }
 }
