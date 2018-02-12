@@ -5,17 +5,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BFBF4893-2273-A47D-0330-60D0DC15720F}</ProjectGuid>
+    <ProjectGuid>{40E9E34D-886E-1391-1F7A-F0A449146F2F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile>
     </CompilerResponseFile>
-    <UnityProjectType>Editor:5</UnityProjectType>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.4.5f1</UnityVersion>
     <RootNamespace>
@@ -54,91 +54,27 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Advertisements">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.EditorTestsRunner">
-      <HintPath>Library\UnityAssemblies\UnityEditor.EditorTestsRunner.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TreeEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.Graphs">
-      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
-      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
-    </Reference>
-    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
-      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="LitJson">
       <HintPath>Assets\Dll\LitJson.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="LResources.CSharp.Plugins.csproj">
-      <Project>{40E9E34D-886E-1391-1F7A-F0A449146F2F}</Project>
-      <Name>LResources.CSharp.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Editor\Assetbundle\AssetBundleExporter.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\AssetProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\Font\FontAssetProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\AnimationProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\AnimatorControllerProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ComponentProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ImageMaterialProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ImageShaderProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\TextFontProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\GameObjectAssetProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\Material\MaterialAssetProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\Material\MaterialJsonData.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\Material\MaterialShaderProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Strategy\AssetBuildStrategy.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Strategy\AssetBuildStrategyManager.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Strategy\StrategyNode.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Util\AssetBridgeHelper.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Util\AssetBundleBuilder.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Util\AssetPathHelper.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Util\AssetRecordHelper.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Util\Logger.cs" />
-    <Compile Include="Assets\Editor\Patch\AssetPatchMaker.cs" />
-    <Compile Include="Assets\Editor\UI\AtlasGenerator.cs" />
-    <Compile Include="Assets\Editor\UI\Util\FolderFilesMD5Checker.cs" />
-    <Compile Include="Assets\Editor\UI\IconProcessor.cs" />
-    <Compile Include="Assets\Editor\UI\UIPrefabProcessor.cs" />
-    <Compile Include="Assets\Editor\UI\Util\AtlasWriter.cs" />
-    <Compile Include="Assets\Editor\UI\Util\ImageChannelSpliterWrapper.cs" />
-    <Compile Include="Assets\Editor\UI\Util\MaterialCreator.cs" />
-    <Compile Include="Assets\Editor\UI\Util\Scale9GridTextureProcessor.cs" />
-    <Compile Include="Assets\Editor\UI\Util\TextureClamper.cs" />
-    <Compile Include="Assets\Editor\UI\Util\TextureImporterUtil.cs" />
+    <Compile Include="Assets\Plugins\Asset\AssetBridge.cs" />
+    <Compile Include="Assets\Plugins\Asset\AssetRecordScriptableObject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\DefaultMaterials\Readme.txt" />
     <None Include="Assets\Resources\DefaultMaterials\UI-Default-ETC1.shader" />
     <None Include="Assets\Resources\DefaultMaterials\UI-Default.shader" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>
