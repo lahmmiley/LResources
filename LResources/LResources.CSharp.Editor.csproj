@@ -106,9 +106,10 @@
     <Compile Include="Assets\Editor\Assetbundle\Processor\Font\FontAssetProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\AnimationProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\AnimatorControllerProcessor.cs" />
+    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\AtlasProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ComponentProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ImageMaterialProcessor.cs" />
-    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ImageShaderProcessor.cs" />
+    <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\ImageMaterialShaderProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\ComponentProcessor\TextFontProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\GameObject\GameObjectAssetProcessor.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Processor\Material\MaterialAssetProcessor.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Assets\Editor\Assetbundle\Util\AssetPathHelper.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Util\AssetRecordHelper.cs" />
     <Compile Include="Assets\Editor\Assetbundle\Util\Logger.cs" />
+    <Compile Include="Assets\Editor\Assetbundle\Util\TemporaryAssetHelper.cs" />
     <Compile Include="Assets\Editor\Patch\AssetPatchMaker.cs" />
     <Compile Include="Assets\Editor\UI\AtlasGenerator.cs" />
     <Compile Include="Assets\Editor\UI\Util\FolderFilesMD5Checker.cs" />

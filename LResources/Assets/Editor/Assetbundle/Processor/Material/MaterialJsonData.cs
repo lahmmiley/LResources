@@ -55,10 +55,61 @@ namespace EditorTools.AssetBundle
                     if(_recordPropertySet.Contains(propertyName) == false)
                     {
                         _recordPropertySet.Add(propertyName);
-                        List<string> list = 
+                        List<string> list = GenerateNonTexturePropertyTokenList(material, i);
+                        propertyTokenListList.Add(list);
                     }
                 }
             }
         }
+
+        private List<string> GenerateNonTexturePropertyTokenList(Material material, int propertyIndex)
+        {
+            List<string> result = new List<string>();
+            ShaderUtil.ShaderPropertyType propertyType = ShaderUtil.GetPropertyType(material.shader, propertyIndex);
+            string propertyName = ShaderUtil.GetPropertyName(material.shader, propertyIndex);
+            result.Add(propertyType.ToString());
+            result.Add(propertyName);
+            result.AddRange(FormatNonTextureProperty(material, propertyType, propertyName));
+            return result;
+        }
+
+        private IEnumerable<string> FormatNonTextureProperty(Material material, ShaderUtil.ShaderPropertyType type, string propertyName)
+        {
+            List<string> result = new List<string>();
+            switch(type)
+            {
+                case ShaderUtil.ShaderPropertyType.Color:
+                    result = FormatColor(material, propertyName);
+                    break;
+                case ShaderUtil.ShaderPropertyType.Float:
+                    result = FormatFloat(material, propertyName);
+                    break;
+                case ShaderUtil.ShaderPropertyType.Range:
+                    result = FormatFloat(material, propertyName);
+                    break;
+                case ShaderUtil.ShaderPropertyType.Vector:
+                    result = FormatVector4(material, propertyName);
+                    break;
+            }
+            return result;
+        }
+
+        private List<string> FormatColor(Material material, string propertyName)
+        {
+            Color color = material.GetColor(propertyName);
+            return new List<string>() { color.r.ToString(), color.g.ToString(), color.b.ToString(), color.a.ToString() };
+        }
+
+        private List<string> FormatFloat(Material material, string propertyName)
+        {
+            return new List<string>() { material.GetFloat(propertyName).ToString() };
+        }
+
+        private List<string> FormatVector4(Material material, string propertyName)
+        {
+            Vector4 value = material.GetVector(propertyName);
+            return new List<string>() { value.x.ToString(), value.y.ToString(), value.z.ToString(), value.w.ToString() };
+        }
+
     }
 }

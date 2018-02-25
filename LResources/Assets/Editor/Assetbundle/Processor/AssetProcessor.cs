@@ -67,7 +67,6 @@ namespace EditorTools.AssetBundle
             for(int i = 0; i < strategy.nodeList.Count; i++)
             {
                 StrategyNode node = strategy.nodeList[i];
-                List<string> pathList;
                 HashSet<string> pathSet;
                 if(string.IsNullOrEmpty(node.processor) == false)
                 {
@@ -76,6 +75,54 @@ namespace EditorTools.AssetBundle
                 else
                 {
                     pathSet = ApplyEmptyStrategyNode(dependAssetPathList, node);
+                }
+                List<string> pathList = pathSet.ToList();
+                RemoveFilteredPath(filteredPathSet, pathList);
+                RemoveFromDependPathList(dependAssetPathList, pathList);
+                AddToFilteredPathSet(filteredPathSet, pathList);
+                ReplaceWithTempAssetPath(pathList);
+                pathListList.Add(pathList);
+            }
+            SaveAssets(asset, entryPath);
+            return pathListList;
+        }
+
+        protected virtual void SaveAssets(Object asset, string entryPath){}
+
+        private void ReplaceWithTempAssetPath(List<string> pathList)
+        {
+            for(int i = 0; i < pathList.Count; i++)
+            {
+                if(TemporaryAssetHelper.HasCreateTempAsset(pathList[i]))
+                {
+                    pathList[i] = TemporaryAssetHelper.GetTempAssetPath(pathList[i]);
+                }
+            }
+        }
+
+        private void AddToFilteredPathSet(HashSet<string> filteredPathSet, List<string> pathList)
+        {
+            foreach(string path in pathList)
+            {
+                filteredPathSet.Add(path);
+            }
+        }
+
+        private void RemoveFromDependPathList(List<string> dependAssetPathList, List<string> pathList)
+        {
+            foreach(string path in pathList)
+            {
+                dependAssetPathList.Remove(path);
+            }
+        }
+
+        private void RemoveFilteredPath(HashSet<string> filteredPathSet, List<string> pathList)
+        {
+            foreach(string path in filteredPathSet)
+            {
+                if(pathList.Contains(path))
+                {
+                    pathList.Remove(path);
                 }
             }
         }
@@ -92,6 +139,19 @@ namespace EditorTools.AssetBundle
             return new HashSet<string>();
         }
 
+        private HashSet<string> ApplyEmptyStrategyNode(List<string> dependPathList, StrategyNode node)
+        {
+            HashSet<string> result = new HashSet<string>();
+            foreach(string path  in dependPathList)
+            {
+                if(node.pattern.IsMatch(path))
+                {
+                    result.Add(path);
+                }
+            }
+            return result;
+        }
+
         protected virtual Object GetAsset(string path)
         {
             return AssetDatabase.LoadAssetAtPath(path, typeof(Object));
@@ -99,7 +159,7 @@ namespace EditorTools.AssetBundle
 
         public List<string> GetDependAssetPathList(string path)
         {
-            List<string> pathList = AssetDatabase.GetDependencies(new string[] { path }).ToList(string);
+            List<string> pathList = AssetDatabase.GetDependencies(new string[] { path }).ToList<string>();
             return pathList;
         }
 

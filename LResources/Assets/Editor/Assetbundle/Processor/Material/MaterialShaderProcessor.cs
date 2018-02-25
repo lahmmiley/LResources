@@ -27,7 +27,9 @@ namespace EditorTools.AssetBundle
                 jsonData.shaderFileName = GetShaderFileName(material.shader);
                 jsonData.shaderKey = AssetPathHelper.GetObjectKey(entryPath, shaderPath, material.shader, node);
                 jsonData.FillNoTexturePropertyData(material, node);
+                result.Add(shaderPath);
             }
+            return result;
         }
 
         private string GetShaderFileName(Shader shader)

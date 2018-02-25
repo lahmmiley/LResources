@@ -29,7 +29,10 @@ namespace EditorTools.AssetBundle
 
         private static void BuildAssets(List<string> selectedPathList)
         {
+            //获取资源分离后的路径
             Dictionary<string, List<List<string>>> splitPathListListDict = GetSplitPathListListDict(selectedPathList);
+            AssetDatabase.SaveAssets();
+            BuildAssets(splitPathListListDict);
         }
 
         /// <summary>
@@ -70,6 +73,21 @@ namespace EditorTools.AssetBundle
                 return AssetProcessor.ProcessAsset(path, strategy);
             }
             return new List<List<string>>();
+        }
+
+        /// <summary>
+        /// 返回Key为资源Path,Value为该资源所在的BundlePath字典
+        /// </summary>
+        /// <param name="splitPathListListDict"></param>
+        private static void BuildAssets(Dictionary<string, List<List<string>>> splitPathListListDict)
+        {
+            Dictionary<string, string> result = new Dictionary<string, string>();
+            foreach(string entryPath in splitPathListListDict.Keys)
+            {
+                List<List<string>> assetPathListList = splitPathListListDict[entryPath];
+                List<StrategyNode> nodeList = AssetBuildStrategyManager.GetAssetBuildStrategy(entryPath).nodeList;
+                HashSet<string>
+            }
         }
 
         /// <summary>

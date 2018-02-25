@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -16,6 +17,9 @@ namespace EditorTools.AssetBundle
             _componentProcessorDict = new Dictionary<string, ComponentProcessor>();
 
             AddComponentProcessor(new AnimatorControllerProcessor());
+            AddComponentProcessor(new ImageMaterialProcessor());
+            AddComponentProcessor(new ImageShaderProcessor());
+            AddComponentProcessor(new TextFontProcessor());
         }
 
         private void AddComponentProcessor(ComponentProcessor processor)
@@ -47,6 +51,18 @@ namespace EditorTools.AssetBundle
                 result.UnionWith(ApplyStrategyNode(entryPath, child, node));
             }
             return result;
+        }
+
+        /// <summary>
+        /// 需要将处理后的Prefab保存起来
+        /// </summary>
+        /// <param name="asset"></param>
+        /// <param name="entryPath"></param>
+        protected override void SaveAssets(Object asset, string path)
+        {
+            string tempPath = TemporaryAssetHelper.GetTempAssetPath(path);
+            PrefabUtility.CreatePrefab(tempPath, asset as GameObject, ReplacePrefabOptions.ConnectToPrefab);
+            Object.DestroyImmediate(asset, true);
         }
     }
 }
