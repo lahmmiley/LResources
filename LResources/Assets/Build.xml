@@ -1,0 +1,538 @@
+﻿<!--
+	1.以资源路径匹配Build.xml中的策略节点中的path正则表达式,找到相应的打包策略,(路径匹配时是顺序查找,定义策略时需要将更精细(Specific)的正则表达式写在较通用(General)的策略之前)
+	2.资源打包的粒度控制,文件夹(Folder),选择集合(Selection),单一文件(Single)
+	path和postfix子模式定义示例：
+	{"processor":"RendererShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+	{"processor":"Animation", "mode":"selection", "pattern":".*?(\\.(?<postfix>(fbx)))$"},
+
+	1.saveTempFile:是否保存打包过程中产生的临时文件，设置为ture保存文件，方便调试、排错。在资源打包机上设置为true也有利于资源被重复打包。
+	2.report:是否弹出打包结果提示框
+	3.build:是否生成AssetBundle，设置为false时，不生成AssetBundle，但是会生成记录信息的_resources.asset文件，在只需要重新生成_resources.asset的情况下可以使用该功能
+	4.saveUIMediate:是否保存UI打包之前预处理产生的中间文件，在组员开发机上应该配置为false，在资源发布机上可以设置为true，以提升打包速度
+
+	测试数据，也可以作为策略编写模板：
+	<node name="animation">
+		<path><![CDATA[Assets/Things/NPC/.*?\.anim]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/NPC/)).*?(\\.anim)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="fbx">
+		<path><![CDATA[Assets/Things/NPC/.*?\.fbx]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/NPC/)).*?(\\.fbx)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="atlas">
+		<path><![CDATA[Assets/Things/Atlas/.*?\.prefab]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"ImageMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shader/)).*?(\\.(shader|psd))$"},
+					{"processor":"ImageMaterialTexture", "mode":"folder", "pattern":"(?<path>(Assets/Things/Atlas/.*/)).*?(\\.(png|asset))$"},
+					{"processor":"ImageMaterial", "mode":"folder", "pattern":"(?<path>(Assets/Things/Atlas/.*/)).*?(\\.(asset))$"},
+					{"processor":"Atlas", "mode":"single", "pattern":".*?(\\.(prefab))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="material">
+		<path><![CDATA[Assets/Things/Models/.*?\.mat]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"Shader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"Texture", "mode":"single", "pattern":".*"},
+					{"processor":"Material", "mode":"single", "pattern":".*?(\\.mat)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+-->
+<root output="../release/" report="true" saveTempFile="true" saveUIMediate="true" build="true">
+	<node name="shader">
+		<path><![CDATA[Assets/Things/Shaders/.*?\.shader]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="font">
+		<path><![CDATA[Assets/Things/Font/.*?\.(ttf|fontsettings)]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/Font/)).*?(\\.(ttf|fontsettings))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!--  
+	<node name="character">
+		<path><![CDATA[Assets/Things/Prefabs/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":".*"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    -->
+	<node name="ui">
+		<path><![CDATA[Assets/Things/Prefabs/UI.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"TextFont", "mode":"single", "pattern":"(?<path>(Assets/Things/Font/)).*?(\\.(ttf|fontsettings))$"},
+					{"processor":"ImageMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"ImageMaterial", "mode":"folder", "pattern":"(?<path>(Assets/Things/Textures/UI_.*?/.*?/)).*?\\.(mat|png)"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="effect">
+        <path><![CDATA[Assets/Things/Effect/Prefab/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"AnimatorController", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareAnimations/)).*?(\\.(controller))$"},
+					
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareTexture/)).*?(\\.(tga|TGA))$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="scene_effect">
+        <path><![CDATA[Assets/Things/Effect/ScenePrefab/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"AnimatorController", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareAnimations/)).*?(\\.(controller))$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareTexture/)).*?(\\.(tga|TGA))$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <node name="face_prefab">
+        <path><![CDATA[Assets/Things/Prefabs/Face/.*?\.prefab$]]></path>
+        <strategy>
+            <![CDATA[
+            {
+                 "strategy":
+                [
+                    {"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+                ]
+            }
+            ]]>
+        </strategy>
+    </node>
+	<node name="single_prefabs">
+        <path><![CDATA[Assets/Things/Prefabs/Single/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareTexture/)).*?(\\.(tga|TGA))$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="single_mat">
+        <path><![CDATA[Assets/Things/Prefabs/Material/.*?\.mat$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":".*"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.mat)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="skybox">
+        <path><![CDATA[Assets/Things/Skybox/.*?\.mat$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.mat)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="dump_map">
+        <path><![CDATA[Assets/Things/Textures/BumpMap/.*?\.(png|jpg)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(png|jpg))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="sound_effect">
+        <path><![CDATA[Assets/Things/Sound/Effect/.*?\.(mp3|ogg)$]]></path>
+		<strategy>
+			<![CDATA[
+			{ "strategy": [ {"processor":"", "mode":"folder", "pattern":"(?<path>(Assets/Things/Sound/Effect/)).*?(\\.(mp3|ogg))$"} ] }
+			]]>
+		</strategy>
+	</node>
+	<node name="sound_battleeffect">
+        <path><![CDATA[Assets/Things/Sound/BattleEffect/.*?\.(mp3|ogg)$]]></path>
+		<strategy>
+			<![CDATA[
+			{ "strategy": [ {"processor":"", "mode":"folder", "pattern":"(?<path>(Assets/Things/Sound/BattleEffect/)).*?(\\.(mp3|ogg))$"} ] }
+			]]>
+		</strategy>
+	</node>
+	<node name="sound_bgm">
+        <path><![CDATA[Assets/Things/Sound/Bgm/.*?\.(mp3|ogg)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(mp3|ogg))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="icon">
+        <path><![CDATA[Assets/Things/Textures/Icon/(Single|Mutliple)/.*?\.png]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+                    {"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/Textures/Icon/(Single|Mutliple)/)).*?(\\.png)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	
+    <!-- Cubemap begin -->
+	<node name="unit_cubemap">
+        <path><![CDATA[Assets/Things/Unit/Cubemap/.*?\.(tga|jpg)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(tga|jpg))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- Cubemap end-->
+
+    <!-- Npc begin -->
+	<node name="npc_model">
+        <path><![CDATA[Assets/Things/Unit/Npc/Prefab/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="npc_skin">
+        <path><![CDATA[Assets/Things/Unit/Npc/Skin/.*?\.(tga|TGA)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(tga|TGA))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="npc_animation">
+        <path><![CDATA[Assets/Things/Unit/Npc/Animation/(\d+)/.*?\.anim$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+                    {"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Npc/Animation/(\\d+)/)).*?(\\.anim)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- Npc end-->
+	
+	<!-- Mount begin -->
+	<node name="mount_model">
+        <path><![CDATA[Assets/Things/Unit/Ride/Prefab/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="mount_skin">
+        <path><![CDATA[Assets/Things/Unit/Ride/Skin/.*?\.(tga|TGA)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(tga|TGA))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="mount_animation">
+        <path><![CDATA[Assets/Things/Unit/Ride/Animation/(\d+)/.*?\.anim$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+                    {"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Ride/Animation/(\\d+)/)).*?(\\.anim)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- Mount end-->
+
+    <!-- Role begin -->
+	<node name="role_model">
+        <path><![CDATA[Assets/Things/Unit/Role/(Prefab|PrefabHead)/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="role_other">
+        <path><![CDATA[Assets/Things/Unit/Role/(Animation|Skin|SkinHead)/.*?\.(tga|TGA|anim)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(tga|TGA|anim))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- Role end-->
+
+    <!-- Weapon begin-->
+	<node name="weapon_model">
+        <path><![CDATA[Assets/Things/Unit/Weapon/Prefab/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- Weapon end-->
+
+    <!-- Wing begin-->
+	<node name="wing_model">
+        <path><![CDATA[Assets/Things/Unit/Wing/Prefab/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="wing_skin">
+        <path><![CDATA[Assets/Things/Unit/Wing/Skin/.*?\.(tga|TGA)$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.(tga|TGA))$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="wing_animation">
+        <path><![CDATA[Assets/Things/Unit/Wing/Animation/(\d+)/.*?\.anim$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+                    {"processor":"", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Wing/Animation/(\\d+)/)).*?(\\.anim)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- Wing end-->
+
+	<node name="bigbg">
+        <path><![CDATA[Assets/Things/Textures/BigBgPref/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+	<node name="loading_page">
+        <path><![CDATA[Assets/Things/Prefabs/LoadingPage/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- lightmap begin-->
+	<node name="lightmap_prefabs">
+        <path><![CDATA[Assets/Things/LightMap/Prefabs/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"TextMeshFont", "mode":"single", "pattern":"(?<path>(Assets/Things/Font/)).*?(\\.ttf)$"},
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareTexture/)).*?(\\.(tga|TGA))$"},
+                    {"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Scenes/custom_model/.*?/texture/)).*?(\\.(tga|TGA|PNG|png))$"},
+                    {"processor":"LightMapRecord", "mode":"single", "pattern":"(?<path>(Assets/Things/LightMap/MapAsset/)).*?(\\.exr)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+    <!-- lightmap end-->
+
+    <node name="drama">
+		<path><![CDATA[Assets/Things/QuestDrama/.*?\.prefab$]]></path>
+		<strategy>
+			<![CDATA[
+			{
+				"strategy":
+				[
+					{"processor":"RendererMaterialShader", "mode":"folder", "pattern":"(?<path>(Assets/Things/Shaders/)).*?(\\.shader)$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Effect/shareTexture/)).*?(\\.(tga|TGA))$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Npc/Skin/)).*?(\\.(tga|TGA))$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Ride/Skin/)).*?(\\.(tga|TGA))$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Role/Skin/)).*?(\\.(tga|TGA))$"},
+					{"processor":"RendererMaterialTexture", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/Role/SkinHead/)).*?(\\.(tga|TGA))$"},
+					{"processor":"DramaAnimation", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/.*?\/)).*?(\\.anim)$"},
+					{"processor":"Animation", "mode":"single", "pattern":"(?<path>(Assets/Things/Unit/.*?\/)).*?(\\.anim)$"},
+					{"processor":"", "mode":"single", "pattern":".*?(\\.prefab)$"}
+				]
+			}
+			]]>
+		</strategy>
+	</node>
+</root>

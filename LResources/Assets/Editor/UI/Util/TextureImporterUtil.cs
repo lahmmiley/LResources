@@ -13,7 +13,7 @@ namespace EditorTools.UI
         public static void CreateAlphaChannelImporter(string path)
         {
             TextureImporter importer = AssetImporter.GetAtPath(path) as TextureImporter;
-            importer.textureType = TextureImporterType.Advanced;
+            importer.textureType = TextureImporterType.Default;
             importer.isReadable = false;
             importer.mipmapEnabled = false;
             importer.textureFormat = GetTextureFormat();

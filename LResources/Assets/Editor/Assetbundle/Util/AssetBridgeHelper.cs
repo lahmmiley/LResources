@@ -22,7 +22,7 @@ namespace EditorTools.AssetBundle
             AssetBridge.AddEntry(bridge, entry);
         }
 
-        public static string[] GetEntryTokens(GameObject go, string p)
+        public static string[] GetEntryTokens(GameObject go, string asset)
         {
             AssetBridge bridge = go.GetComponent<AssetBridge>();
             if(bridge == null)

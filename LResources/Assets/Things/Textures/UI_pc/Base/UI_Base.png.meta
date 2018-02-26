@@ -1,0 +1,3218 @@
+fileFormatVersion: 2
+guid: c97c95af0f7c46d4ca427e8ca8844fbb
+timeCreated: 1519644719
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: add1
+    21300002: add2
+    21300004: add3
+    21300006: addbutton
+    21300008: addbutton1
+    21300010: addbutton3
+    21300012: addmoreicon
+    21300014: addmoreicon2
+    21300016: Arrow1
+    21300018: arrow3
+    21300020: arrow4
+    21300022: Arrow5
+    21300024: attentionicon
+    21300026: attentionicon1
+    21300028: attrbg
+    21300030: backpackscorebg
+    21300032: barframe
+    21300034: bargreen
+    21300036: barhead
+    21300038: barred
+    21300040: baryellow
+    21300042: ButterflyRight
+    21300044: button12
+    21300046: button13
+    21300048: button15
+    21300050: button16
+    21300052: button17
+    21300054: button18
+    21300056: button19
+    21300058: button20
+    21300060: button22
+    21300062: button23
+    21300064: button24
+    21300066: button25
+    21300068: button26
+    21300070: button27
+    21300072: button28
+    21300074: button29
+    21300076: button3
+    21300078: button30
+    21300080: button31
+    21300082: button32
+    21300084: button33
+    21300086: button34
+    21300088: button35
+    21300090: button36
+    21300092: button37
+    21300094: button38
+    21300096: button39
+    21300098: button4
+    21300100: button40
+    21300102: button5
+    21300104: button6
+    21300106: button7
+    21300108: button8
+    21300110: button9
+    21300112: buttonarrow
+    21300114: changeicon
+    21300116: chatarrow
+    21300118: chatbg
+    21300120: classesicon
+    21300122: classesicon2
+    21300124: clockicon
+    21300126: closebutton
+    21300128: closebutton1
+    21300130: closebutton2
+    21300132: closebutton3
+    21300134: closebutton4
+    21300136: CryGirl
+    21300138: cyclebg1
+    21300140: cyclebg2
+    21300142: cyclebutton
+    21300144: expicon
+    21300146: fenge
+    21300148: greenarrowup
+    21300150: HeadBg
+    21300152: I18NArrow
+    21300154: inputbg
+    21300156: InputBg2
+    21300158: inputbg3
+    21300160: inputbg4
+    21300162: inputbg5
+    21300164: itembg1
+    21300166: itembg10
+    21300168: itembg11
+    21300170: itembg2
+    21300172: itembg3
+    21300174: itembg4
+    21300176: itembg5
+    21300178: itembg6
+    21300180: itembg7
+    21300182: label1
+    21300184: levbg
+    21300186: line1
+    21300188: line10
+    21300190: line11
+    21300192: line12
+    21300194: line2
+    21300196: line3
+    21300198: line4
+    21300200: line5
+    21300202: line6
+    21300204: line7
+    21300206: line8
+    21300208: line9
+    21300210: lockicon
+    21300212: mainbutton
+    21300214: minusbutton
+    21300216: mpbar
+    21300218: panelbg
+    21300220: panelbg1
+    21300222: panelbg10
+    21300224: panelbg11
+    21300226: panelbg12
+    21300228: panelbg13
+    21300230: panelbg14
+    21300232: panelbg15
+    21300234: panelbg2
+    21300236: panelbg3
+    21300238: panelbg4
+    21300240: panelbg5
+    21300242: panelbg6
+    21300244: panelbg7
+    21300246: panelbg8
+    21300248: panelbg9
+    21300250: paneltabselect
+    21300252: paneltabunselect
+    21300254: questionMark
+    21300256: redpoint
+    21300258: reduceButton
+    21300260: scrollbottom
+    21300262: select
+    21300264: select1
+    21300266: select2
+    21300268: Select3
+    21300270: select4
+    21300272: select5
+    21300274: slot0
+    21300276: slot1
+    21300278: slot2
+    21300280: slot3
+    21300282: slot4
+    21300284: slot5
+    21300286: slotequipnone
+    21300288: slotgold
+    21300290: slotlabel1
+    21300292: slotlabel2
+    21300294: slotnone
+    21300296: smallbutton1
+    21300298: smallbutton2
+    21300300: smallbutton3
+    21300302: smallicon1
+    21300304: smallicon2
+    21300306: smallicon22
+    21300308: smallicon23
+    21300310: smallicon3
+    21300312: smallicon4
+    21300314: smallicon5
+    21300316: smallicon6
+    21300318: smalliconbg
+    21300320: stampbg1
+    21300322: stampbg2
+    21300324: stampbg3
+    21300326: star
+    21300328: subnormal
+    21300330: subpanel
+    21300332: subpanel1
+    21300334: subpanel3
+    21300336: subpanelbg
+    21300338: subpanelbg1
+    21300340: subpanelbg2
+    21300342: subselect
+    21300344: tabBackground
+    21300346: tagBg1
+    21300348: tagBg2
+    21300350: tanhao
+    21300352: textbg1
+    21300354: textbg10
+    21300356: textbg11
+    21300358: textbg12
+    21300360: textbg13
+    21300362: textbg14
+    21300364: textbg15
+    21300366: textbg16
+    21300368: textbg17
+    21300370: textbg18
+    21300372: textbg19
+    21300374: textbg2
+    21300376: textbg20
+    21300378: textbg21
+    21300380: textbg22
+    21300382: textbg23
+    21300384: textbg24
+    21300386: textbg25
+    21300388: textbg26
+    21300390: textbg27
+    21300392: textbg3
+    21300394: textbg4
+    21300396: textbg5
+    21300398: textbg6
+    21300400: textbg8
+    21300402: textbg9
+    21300404: tick
+    21300406: Tipstitlebg
+    21300408: Tipstitlebg1
+    21300410: Tipstitlebg2
+    21300412: titlenamebgH
+    21300414: titlenamebgV
+    21300416: toggleBar1
+    21300418: toggleBg1
+    21300420: wenhao
+    21300422: WindowHideBtn
+    21300424: windowicon1
+    21300426: windowtabselect
+    21300428: windowtabselect1
+    21300430: windowtabunselect
+    21300432: windowtabunselect1
+    21300434: windowtitlebg
+    21300436: windowtitlebg2
+    21300438: windowtitlebg3
+    21300440: windowtop
+    21300442: windowtopicon
+    21300444: zhuangshi
+    21300446: zhuangshi1
+    21300448: zhuangshi2
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: add1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1006
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: add2
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 980
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: add3
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 109
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: addbutton
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 565
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: addbutton1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 913
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: addbutton3
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 905
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: addmoreicon
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 758
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: addmoreicon2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 963
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Arrow1
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 930
+        width: 45
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: arrow3
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 914
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: arrow4
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 816
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Arrow5
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 891
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: attentionicon
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 852
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: attentionicon1
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 950
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: attrbg
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 472
+        width: 150
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 12, z: 11, w: 12}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: backpackscorebg
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 2
+        width: 292
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: barframe
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 676
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 10, z: 14, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: bargreen
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 436
+        width: 125
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 9, z: 7, w: 8}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: barhead
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 816
+        width: 47
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: barred
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 433
+        width: 125
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 8, z: 8, w: 8}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: baryellow
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 449
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 9, z: 8, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: ButterflyRight
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 639
+        width: 49
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button12
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 315
+        width: 175
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 0, z: 47, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button13
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 315
+        width: 175
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 47, y: 0, z: 47, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button15
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 513
+        width: 72
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 21, z: 32, w: 20}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button16
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 315
+        width: 138
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 17, y: 24, z: 17, w: 11}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button17
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 180
+        width: 138
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 17, y: 22, z: 21, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button18
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 523
+        width: 143
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 73, y: 42, z: 68, w: 17}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button19
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 863
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 0, z: 25, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button20
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 565
+        width: 104
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 52, y: 0, z: 52, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button22
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 565
+        width: 59
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 37, z: 28, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button23
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 382
+        width: 130
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button24
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 818
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button25
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 866
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button26
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 382
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 51, y: 35, z: 51, w: 28}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button27
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 472
+        width: 102
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 35, z: 52, w: 28}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button28
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 180
+        width: 177
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button29
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 180
+        width: 177
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button3
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 243
+        width: 187
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button30
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 704
+        width: 136
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 3, z: 2, w: 3}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button31
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 296
+        width: 136
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 3, z: 12, w: 3}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button32
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 513
+        width: 82
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 0, z: 40, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button33
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 914
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button34
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 45
+        width: 228
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button35
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 765
+        width: 5
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 3, z: 1, w: 31}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button36
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 934
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 23, y: 32, z: 25, w: 31}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button37
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 382
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button38
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 565
+        width: 70
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 26, y: 25, z: 18, w: 16}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button39
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 957
+        width: 70
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 25, z: 23, w: 28}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button4
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 243
+        width: 187
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button40
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 243
+        width: 183
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 72, y: 31, z: 69, w: 31}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button5
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 45
+        width: 41
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 32, z: 20, w: 34}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button6
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 129
+        width: 103
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 328
+        width: 160
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 75, y: 0, z: 75, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button8
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 685
+        width: 102
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 51, y: 0, z: 51, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: button9
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 388
+        width: 160
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 75, y: 0, z: 75, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: buttonarrow
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 115
+        width: 24
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: changeicon
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 816
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chatarrow
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 449
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: chatbg
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 750
+        width: 36
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 17, y: 9, z: 17, w: 7}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: classesicon
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 852
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: classesicon2
+      rect:
+        serializedVersion: 2
+        x: 973
+        y: 769
+        width: 39
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: clockicon
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 951
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: closebutton
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 180
+        width: 227
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: closebutton1
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 877
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: closebutton2
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 2
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: closebutton3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 730
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: closebutton4
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 887
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: CryGirl
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 374
+        width: 97
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: cyclebg1
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 852
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: cyclebg2
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 638
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: cyclebutton
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 894
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: expicon
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 887
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: fenge
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 622
+        width: 22
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 50, z: 0, w: 50}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: greenarrowup
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 862
+        width: 34
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: HeadBg
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 604
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: I18NArrow
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 487
+        width: 67
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: inputbg
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 925
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 14, w: 14}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: InputBg2
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 433
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 11, z: 12, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: inputbg3
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 129
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 0, z: 12, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: inputbg4
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 449
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 9, z: 9, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: inputbg5
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 744
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg1
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 623
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 33, y: 33, z: 33, w: 33}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg10
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 873
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 22, y: 30, z: 22, w: 30}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg11
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 914
+        width: 48
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 23, y: 24, z: 24, w: 20}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg2
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 639
+        width: 51
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 21, y: 25, z: 23, w: 21}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg3
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 873
+        width: 50
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 40, z: 25, w: 40}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg4
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1001
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 9, z: 10, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg5
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 723
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 23, y: 21, z: 23, w: 18}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg6
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 802
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: itembg7
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 115
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: label1
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 811
+        width: 70
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: levbg
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 992
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 15, y: 0, z: 15, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 374
+        width: 25
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line10
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 472
+        width: 266
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line11
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 523
+        width: 2
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line12
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 923
+        width: 2
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 89
+        width: 128
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line3
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 122
+        width: 128
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line4
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 802
+        width: 39
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 17, y: 0, z: 17, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 479
+        width: 22
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 49, z: 0, w: 49}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line6
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 923
+        width: 2
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line7
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 487
+        width: 191
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 71, y: 0, z: 71, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line8
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 639
+        width: 213
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 101, y: 0, z: 63, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: line9
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 109
+        width: 215
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 17, z: 0, w: 16}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: lockicon
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 382
+        width: 37
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mainbutton
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 315
+        width: 164
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: minusbutton
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 89
+        width: 37
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: mpbar
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 654
+        width: 125
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 13, w: 5}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 889
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 890
+        width: 110
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 53, y: 47, z: 53, w: 54}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg10
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 816
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 14, w: 14}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg11
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 639
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg12
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 658
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 9, z: 6, w: 7}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg13
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 89
+        width: 114
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 10, z: 36, w: 8}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg14
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 727
+        width: 22
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 9, z: 9, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg15
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 633
+        width: 19
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 10, z: 9, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 704
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 21, y: 33, z: 21, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg3
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 769
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 17, z: 18, w: 17}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg4
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 852
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 10, z: 12, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg5
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 816
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 14, w: 14}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg6
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 957
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 13, y: 13, z: 12, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg7
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 920
+        width: 25
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 11, z: 11, w: 11}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg8
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 936
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 15, z: 16, w: 15}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: panelbg9
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 811
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 17, z: 14, w: 17}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: paneltabselect
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 743
+        width: 93
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: paneltabunselect
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 619
+        width: 93
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: questionMark
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 961
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: redpoint
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 985
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: reduceButton
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 654
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: scrollbottom
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 586
+        width: 160
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 33, y: 0, z: 38, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: select
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 822
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 31, y: 32, z: 31, w: 32}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: select1
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 802
+        width: 71
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 35, y: 35, z: 35, w: 35}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: select2
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 951
+        width: 71
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 34, y: 32, z: 34, w: 32}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Select3
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 920
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 10, z: 12, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: select4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 708
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 9, y: 8, z: 9, w: 8}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: select5
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 877
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 14, w: 14}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slot0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 765
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slot1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 638
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slot2
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 730
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slot3
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 658
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slot4
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 914
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slot5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 822
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slotequipnone
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 382
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slotgold
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 474
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slotlabel1
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 962
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slotlabel2
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 744
+        width: 73
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: slotnone
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 566
+        width: 88
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallbutton1
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 810
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 23, y: 13, z: 23, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallbutton2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 870
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 14, z: 24, w: 14}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallbutton3
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 315
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 16, z: 10, w: 14}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon1
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 975
+        width: 38
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon2
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 431
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon22
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 586
+        width: 19
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon23
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 774
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon3
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 690
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon4
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 854
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon5
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 769
+        width: 45
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smallicon6
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 997
+        width: 29
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: smalliconbg
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 852
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: stampbg1
+      rect:
+        serializedVersion: 2
+        x: 856
+        y: 513
+        width: 73
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: stampbg2
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 565
+        width: 73
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: stampbg3
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 513
+        width: 73
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: star
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 982
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subnormal
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 382
+        width: 152
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subpanel
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 243
+        width: 127
+        height: 127
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 63, y: 42, z: 63, w: 79}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subpanel1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 227
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 112, y: 34, z: 113, w: 83}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subpanel3
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 45
+        width: 216
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 104, y: 25, z: 103, w: 46}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subpanelbg
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 604
+        width: 17
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 11, z: 8, w: 11}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subpanelbg1
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 816
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 15, z: 14, w: 15}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subpanelbg2
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 750
+        width: 54
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 26, y: 16, z: 26, w: 38}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: subselect
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 243
+        width: 152
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tabBackground
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 998
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tagBg1
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 673
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tagBg2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 811
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tanhao
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 890
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg1
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 887
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 14, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg10
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 723
+        width: 41
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg11
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 654
+        width: 51
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 0, z: 25, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg12
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 673
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 22, z: 14, w: 22}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg13
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 887
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 13, z: 14, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg14
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 449
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 8, z: 8, w: 8}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg15
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 802
+        width: 22
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 0, z: 10, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg16
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 539
+        width: 99
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 0, z: 48, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg17
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 723
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg18
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 769
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 0, z: 16, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg19
+      rect:
+        serializedVersion: 2
+        x: 718
+        y: 676
+        width: 64
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 10, z: 30, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg2
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 852
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 14, z: 14, w: 13}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg20
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 472
+        width: 83
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 55, y: 0, z: 28, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg21
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 565
+        width: 64
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 23, z: 30, w: 23}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg22
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1006
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 1, z: 10, w: 10}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg23
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 899
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 11, y: 11, z: 9, w: 9}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg24
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 708
+        width: 44
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 3, z: 0, w: 4}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg25
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 891
+        width: 30
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 7, z: 12, w: 7}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg26
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 565
+        width: 61
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 0, z: 30, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg27
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 723
+        width: 69
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 35, y: 0, z: 34, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1006
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg4
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 920
+        width: 31
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 15, z: 14, w: 11}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg5
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 769
+        width: 62
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 0, z: 29, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg6
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 448
+        width: 121
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 57, y: 0, z: 59, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg8
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 857
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 4, z: 4, w: 4}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: textbg9
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 675
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 15, y: 12, z: 15, w: 12}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: tick
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 769
+        width: 44
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Tipstitlebg
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 513
+        width: 81
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 39, y: 0, z: 39, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Tipstitlebg1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 623
+        width: 212
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 4, z: 192, w: 4}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: Tipstitlebg2
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 852
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: titlenamebgH
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 723
+        width: 62
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 0, z: 30, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: titlenamebgV
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 448
+        width: 31
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 27, z: 0, w: 27}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: toggleBar1
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 945
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: toggleBg1
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 984
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: wenhao
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 807
+        width: 43
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: WindowHideBtn
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 750
+        width: 41
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowicon1
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 909
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtabselect
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 243
+        width: 160
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtabselect1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 479
+        width: 70
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtabunselect
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 382
+        width: 105
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtabunselect1
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 622
+        width: 70
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtitlebg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 129
+        width: 498
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 100, y: 0, z: 100, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtitlebg2
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 180
+        width: 281
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtitlebg3
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 129
+        width: 380
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtop
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 2
+        width: 451
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 350, y: 0, z: 100, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: windowtopicon
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 513
+        width: 110
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zhuangshi
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 857
+        width: 86
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zhuangshi1
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 455
+        width: 121
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: zhuangshi2
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 451
+        width: 105
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

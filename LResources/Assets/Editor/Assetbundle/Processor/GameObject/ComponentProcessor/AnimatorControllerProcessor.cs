@@ -14,5 +14,11 @@ namespace EditorTools.AssetBundle
         {
             this.Name = "AnimatorControllerProcessor";
         }
+
+        //TODO
+        public override HashSet<string> Process(string entryPath, UnityEngine.GameObject go, StrategyNode node)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

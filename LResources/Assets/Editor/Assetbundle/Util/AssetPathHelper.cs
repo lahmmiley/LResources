@@ -165,5 +165,49 @@ namespace EditorTools.AssetBundle{
             }
             return path;
         }
+
+        public static string GetSelectionModeBundlePath(string entryPath, List<string> assetPathList, Regex pattern)
+        {
+            return GetSelectionModeBundlePath(entryPath, assetPathList[0], pattern).Replace(" ", "");
+        }
+
+        public static string GetFolderModeBundlePath(List<string> assetPathList, Regex pattern)
+        {
+            return GetFolderModeBundlePath(assetPathList[0], pattern).Replace(" ", "");
+        }
+
+        /// <summary>
+        /// folder模式下的资源包路径
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="regex"></param>
+        /// <returns></returns>
+        public static string GetFolderModeStartPath(string path, Regex pattern)
+        {
+            GroupCollection gc = pattern.Match(path).Groups;
+            string result = gc[REGEX_TOKEN_PATH].Value;
+            int lastSlashIndex = result.LastIndexOf(@"/");
+            if(lastSlashIndex == result.Length - 1)
+            {
+                result = result.Substring(0, result.Length - 1);
+            }
+            return result;
+        }
+
+        public static string ToAssetPath(string systemPath)
+        {
+            return "Assets" + systemPath.Substring(Application.dataPath.Length);
+        }
+
+        /// <summary>
+        /// 获取AB文件的输出路径
+        /// </summary>
+        /// <param name="bundlePath"></param>
+        /// <returns></returns>
+        public static string GetOutputPath(string assetbundleName)
+        {
+            string basePath = AssetBuildStrategyManager.outputPath;
+            return basePath + assetbundleName;
+        }
     }
 }

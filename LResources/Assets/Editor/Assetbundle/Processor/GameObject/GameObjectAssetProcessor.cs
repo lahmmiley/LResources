@@ -64,5 +64,12 @@ namespace EditorTools.AssetBundle
             PrefabUtility.CreatePrefab(tempPath, asset as GameObject, ReplacePrefabOptions.ConnectToPrefab);
             Object.DestroyImmediate(asset, true);
         }
+
+        protected override Object GetAsset(string path)
+        {
+            GameObject temp = TemporaryAssetHelper.CreateTempAsset(path) as GameObject;
+            GameObject go = PrefabUtility.InstantiatePrefab(temp) as GameObject;
+            return go;
+        }
     }
 }

@@ -4,16 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-//基本一致
 namespace EditorTools.UI
 {
     public class UIPrefabProcessor
     {
+        public static bool IS_DELETE_MEDIATE = true;
+
         /// <summary>
         /// UIPrefab根路径
         /// </summary>
@@ -22,12 +24,20 @@ namespace EditorTools.UI
         /// <summary>
         /// UIPrefab副本根路径
         /// </summary>
-        public static string UI_PREFAB_ROOT_SHADOW = "Assets/Things/Prefabs/UI_{0}";
+        public static string UI_PREFAB_ROOT_SHADOW = "Assets/Things/Prefabs/UI_{0}/";
+
+        public static Regex UI_PREFAB_ROOT_SHADOW_PATTERN = new Regex("Assets/Things/Prefabs/UI_.*?/", RegexOptions.IgnoreCase);
 
         /// <summary>
         /// UIPrefab中单张图片列表目录根路径
         /// </summary>
-        public static string UI_TEXTURE_ROOT = "Assets/Things/Texture/UI/";
+        public static string UI_TEXTURE_ROOT = "Assets/Things/Textures/UI/";
+
+        /// <summary>
+        /// UIPrefab依赖图片资源合并图集目录根路径
+        /// </summary>
+        public static string UI_TEXTURE_ROOT_SHADOW = "Assets/Things/Textures/UI_{0}/";
+        public static Regex UI_TEXTURE_ROOT_SHADOW_PATTERN = new Regex("Assets/Things/Textures/UI_.*?/", RegexOptions.IgnoreCase);
 
         public static string Process(string prefabPath)
         {
@@ -134,7 +144,7 @@ namespace EditorTools.UI
 
         private static string GetCopyPrefabPath(string sourcePath)
         {
-            return sourcePath.Replace(UI_PREFAB_ROOT, GetShadowTextureFolderRoot());
+            return sourcePath.Replace(UI_PREFAB_ROOT, GetShadowPrefabFolderRoot());
         }
 
         public static string GetShadowTextureFolderPath(string folderPath)
@@ -143,6 +153,11 @@ namespace EditorTools.UI
         }
 
         public static string GetShadowTextureFolderRoot()
+        {
+            return string.Format(UI_TEXTURE_ROOT_SHADOW, AssetPathHelper.GetBuildTarget(AssetPathHelper.GetBuildTarget()));
+        }
+
+        public static string GetShadowPrefabFolderRoot()
         {
             return string.Format(UI_PREFAB_ROOT_SHADOW, AssetPathHelper.GetBuildTarget(AssetPathHelper.GetBuildTarget()));
         }
@@ -181,5 +196,24 @@ namespace EditorTools.UI
             EditorUtility.DisplayDialog("错误", msg, "马上调整Go~");
             throw new Exception(msg);
         }
+
+        public static void DeleteMediate()
+        {
+            if(IS_DELETE_MEDIATE == true)
+            {
+                string systemPrefabRoot = ToFileSystemPath(GetShadowPrefabFolderRoot());
+                if(Directory.Exists(systemPrefabRoot) == true)
+                {
+                    Directory.Delete(systemPrefabRoot, true);
+                }
+                string systemTextureRoot = ToFileSystemPath(GetShadowTextureFolderRoot());
+                if(Directory.Exists(systemTextureRoot) == true)
+                {
+                    Directory.Delete(systemTextureRoot, true);
+                }
+                AssetDatabase.Refresh();
+            }
+        }
+
     }
 }

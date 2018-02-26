@@ -8,6 +8,7 @@ using Logger = EditorTools.Assetbundle.Logger;
 using System.Collections.Generic;
 using System.IO;
 using EditorTools.UI;
+using System.Linq;
 
 namespace EditorTools.AssetBundle
 {
@@ -19,6 +20,7 @@ namespace EditorTools.AssetBundle
 
         private static HashSet<string> _processedAssetPathSet;
 
+        [MenuItem("Assets/Build AssetBundle From Selection")]
         public static void BuildFromSelection()
         {
             AssetPathHelper.buildTarget = EditorUserBuildSettings.activeBuildTarget;
@@ -33,6 +35,14 @@ namespace EditorTools.AssetBundle
             Dictionary<string, List<List<string>>> splitPathListListDict = GetSplitPathListListDict(selectedPathList);
             AssetDatabase.SaveAssets();
             BuildAssets(splitPathListListDict);
+            AssetRecordHelper.WriteAssetRecord();
+            AssetBundleBuilder.BuildAssetRecord();
+            //TemporaryAssetHelper.DeleteAllTempAsset();
+            if(AssetBuildStrategyManager.isSaveUIMediate == false)
+            {
+                UIPrefabProcessor.DeleteMediate();
+            }
+            AssetBundleBuilder.LogBuildResult();
         }
 
         /// <summary>
@@ -79,15 +89,48 @@ namespace EditorTools.AssetBundle
         /// 返回Key为资源Path,Value为该资源所在的BundlePath字典
         /// </summary>
         /// <param name="splitPathListListDict"></param>
-        private static void BuildAssets(Dictionary<string, List<List<string>>> splitPathListListDict)
+        private static Dictionary<string, string> BuildAssets(Dictionary<string, List<List<string>>> splitPathListListDict)
         {
             Dictionary<string, string> result = new Dictionary<string, string>();
             foreach(string entryPath in splitPathListListDict.Keys)
             {
                 List<List<string>> assetPathListList = splitPathListListDict[entryPath];
                 List<StrategyNode> nodeList = AssetBuildStrategyManager.GetAssetBuildStrategy(entryPath).nodeList;
-                HashSet<string>
+                HashSet<string> bundlePathSet = new HashSet<string>();
+                for(int i = 0; i < assetPathListList.Count; i++)
+                {
+                    Dictionary<string, string> bundlePathDict = AssetBundleBuilder.Add(entryPath, assetPathListList[i], nodeList[i]);
+                    foreach(string k in bundlePathDict.Keys)
+                    {
+                        string path = ReplaceTemparyPath(k);
+                        if(result.ContainsKey(path) == false)
+                        {
+                            result.Add(path, bundlePathDict[k]);
+                        }
+                        bundlePathSet.Add(bundlePathDict[k]);
+                    }
+                }
+                AssetRecordHelper.RecordAssetDependency(entryPath, bundlePathSet.ToList<string>());
             }
+            AssetBundleBuilder.Build();
+            return result;
+        }
+
+        /// <summary>
+        /// 将记录中临时资源的路径替换为原始资源路径
+        /// 包括:
+        /// 1.打包过程中在Resources_temp下生成的临时文件
+        /// 2.UI预处理过程中产生的临时文件
+        /// </summary>
+        /// <param name="k"></param>
+        /// <returns></returns>
+        private static string ReplaceTemparyPath(string tempPath)
+        {
+            ///处理含有Resource_temp的路径
+            string result = tempPath.Replace(TemporaryAssetHelper.RESOURCES_TEMP, TemporaryAssetHelper.RESOURCES);
+            //处理含有UI_{BuildTarget}的路径
+            result = result.Replace(UIPrefabProcessor.GetShadowPrefabFolderRoot(), UIPrefabProcessor.UI_PREFAB_ROOT);
+            return result;
         }
 
         /// <summary>
@@ -145,8 +188,8 @@ namespace EditorTools.AssetBundle
 
         private static void Initialize()
         {
-            //TemporaryAssetHelper.Initialize();
-            //MeterialJsonData.Initialize();
+            TemporaryAssetHelper.Initialize();
+            MaterialJsonData.Initialize();
             AssetBuildStrategyManager.Initialize();
             AssetBundleBuilder.Initialize();
             AssetRecordHelper.ReadAssetRecord();
